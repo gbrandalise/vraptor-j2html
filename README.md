@@ -70,6 +70,17 @@ VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 			}
 		
 		}
+		
+		
+		<!-- html final -->
+		<!DOCTYPE html>
+		<html>
+			<head>
+			</head>
+			<body>
+				admin
+			</body>
+		</html>
 ```
 
 # sobrescrevendo os containers padrão
@@ -93,6 +104,17 @@ VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 			}
 		
 		}
+		
+		<!-- html final -->
+		<!DOCTYPE html>
+		<html>
+			<head>
+			</head>
+			<body>
+				<h1>Titulo</h1>
+				admin
+			</body>
+		</html>
 ```
 
 # ajuda
