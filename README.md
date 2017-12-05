@@ -18,12 +18,12 @@ Todos as classes default podem ser sobrescritas usando as especificações da Ap
 VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 
 ```
-<dependency>
-	<groupId>br.com.neo</groupId>
-	<artifactId>vraptor-j2html</artifactId>
-	<version>0.0.6</version>
-	<scope>compile</scope>
-</dependency>
+		<dependency>
+			<groupId>br.com.neo</groupId>
+			<artifactId>vraptor-j2html</artifactId>
+			<version>0.0.6</version>
+			<scope>compile</scope>
+		</dependency>
 ```
 
 # renderizacao das views
