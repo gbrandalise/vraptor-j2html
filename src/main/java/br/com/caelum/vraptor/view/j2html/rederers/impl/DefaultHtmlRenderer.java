@@ -15,6 +15,13 @@ import br.com.caelum.vraptor.view.j2html.rederers.HtmlRenderer;
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
+/**
+ * Classe default de implementacao da renderizacao do elemento html do html.
+ * Essa classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * 
+ * @author giovanny.brandalise
+ *
+ */
 @RequestScoped
 public class DefaultHtmlRenderer implements HtmlRenderer {
 

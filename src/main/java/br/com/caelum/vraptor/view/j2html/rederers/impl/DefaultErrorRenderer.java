@@ -16,9 +16,16 @@ import br.com.caelum.vraptor.view.j2html.rederers.ErrorRenderer;
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
+/**
+ * Classe default de implementacao da renderizacao da pagina de erro. Essa
+ * classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * 
+ * @author giovanny.brandalise
+ *
+ */
 @RequestScoped
 public class DefaultErrorRenderer implements ErrorRenderer {
-	
+
 	private Logger log;
 
 	/**

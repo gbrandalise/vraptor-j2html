@@ -13,9 +13,16 @@ import br.com.caelum.vraptor.view.j2html.rederers.BodyRenderer;
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
+/**
+ * Classe default de implementacao da renderizacao do elemento body do html.
+ * Essa classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * 
+ * @author giovanny.brandalise
+ *
+ */
 @RequestScoped
 public class DefaultBodyRenderer implements BodyRenderer {
-	
+
 	private Logger log;
 
 	/**

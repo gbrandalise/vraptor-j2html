@@ -13,12 +13,13 @@ import org.slf4j.LoggerFactory;
 public class LoggerProducer {
 
 	/**
-	 * @param injectionPoint Ponto de injecao de dependencia
+	 * @param injectionPoint
+	 *            Ponto de injecao de dependencia
 	 * @return Instancia do Logger para a classe em que esta injetado
 	 */
 	@Produces
 	public Logger produceLogger(InjectionPoint injectionPoint) {
-        return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
-    }
-	
+		return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+	}
+
 }

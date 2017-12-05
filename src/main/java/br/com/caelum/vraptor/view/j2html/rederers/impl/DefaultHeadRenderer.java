@@ -13,11 +13,18 @@ import br.com.caelum.vraptor.view.j2html.rederers.HeadRenderer;
 import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
+/**
+ * Classe default de implementacao da renderizacao do elemento head do html.
+ * Essa classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * 
+ * @author giovanny.brandalise
+ *
+ */
 @RequestScoped
 public class DefaultHeadRenderer implements HeadRenderer {
-	
+
 	private Logger log;
-	
+
 	/**
 	 * @deprecated CDI eyes onlye
 	 */

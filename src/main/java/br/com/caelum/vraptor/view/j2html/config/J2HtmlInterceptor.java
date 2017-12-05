@@ -13,7 +13,14 @@ import br.com.caelum.vraptor.controller.ControllerMethod;
 import br.com.caelum.vraptor.core.InterceptorStack;
 import br.com.caelum.vraptor.interceptor.Interceptor;
 
-
+/**
+ * Classe responsavel por interceptar todas as chamadas aos metodos e verificar
+ * se possui a anotacao @J2HtmlRenderer ou nao Caso o metodo possua a anotacao,
+ * usa a view J2HtmlView para renderizacao
+ * 
+ * @author giovanny.brandalise
+ *
+ */
 
 @Intercepts
 public class J2HtmlInterceptor implements Interceptor {
@@ -35,6 +42,11 @@ public class J2HtmlInterceptor implements Interceptor {
 		this.log = log;
 	}
 
+	/**
+	 * Metodo responsavel por interceptar as chamadas aos metodos dos controllers
+	 * que possuem a anotacao @J2HtmlRenderer e utilizar a classe view J2HtmlView
+	 * para escrita do html
+	 */
 	@Override
 	public void intercept(InterceptorStack stack, ControllerMethod method, Object controllerInstance)
 			throws InterceptionException {
@@ -48,6 +60,10 @@ public class J2HtmlInterceptor implements Interceptor {
 		this.result.nothing();
 	}
 
+	/**
+	 * Metodo responsavel por validar se a anotacao @J2HtmlRenderer esta presente no
+	 * metodo ou na classe controller
+	 */
 	@Override
 	public boolean accepts(ControllerMethod method) {
 		log.debug("accepts accessed");
