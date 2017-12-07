@@ -19,9 +19,9 @@ VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 
 ```
 		<dependency>
-			<groupId>br.com.neo</groupId>
+			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>vraptor-j2html</artifactId>
-			<version>0.0.6</version>
+			<version>0.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 ```
