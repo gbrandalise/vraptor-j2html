@@ -7,6 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import br.com.caelum.vraptor.view.j2html.rederers.ViewRenderer;
+import br.com.caelum.vraptor.view.j2html.rederers.impl.DefaultViewRenderer;
 
 /**
  * [en_US] Annotation responsible for setting the rendering class of the view
@@ -23,6 +24,6 @@ import br.com.caelum.vraptor.view.j2html.rederers.ViewRenderer;
 @Documented
 public @interface J2HtmlRenderer {
 
-	Class<? extends ViewRenderer> value();
+	Class<? extends ViewRenderer> value() default DefaultViewRenderer.class;
 
 }

@@ -40,7 +40,7 @@ public class DefaultErrorRenderer implements ErrorRenderer {
 	}
 
 	@Inject
-	protected DefaultErrorRenderer(Logger log) {
+	public DefaultErrorRenderer(Logger log) {
 		this.log = log;
 	}
 
@@ -61,7 +61,8 @@ public class DefaultErrorRenderer implements ErrorRenderer {
 	private String viewExceptionToString(ViewJ2HtmlException ex) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<!-- Exception: \n");
-		for (StackTraceElement ste : ex.getCause().getStackTrace()) {
+		Exception exp = ex.getCause() != null ? (Exception) ex.getCause() : ex;
+		for (StackTraceElement ste : exp.getStackTrace()) {
 			sb.append(ste.toString() + "\n");
 		}
 		sb.append("\n-->");

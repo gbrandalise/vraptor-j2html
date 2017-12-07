@@ -11,7 +11,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 
@@ -92,7 +91,7 @@ public class J2HtmlView implements View {
 			log.error(j2e.getClass().getName(), j2e);
 			html = document().render() + "\n" + errorRenderer.getContainer(j2e, text("Error")).renderFormatted();
 		} finally {
-			response.setContentType(MediaType.TEXT_HTML);
+			response.setContentType("text/html");
 			response.setCharacterEncoding(StandardCharsets.UTF_8.name());
 			response.getWriter().write(html);
 			response.getWriter().flush();
