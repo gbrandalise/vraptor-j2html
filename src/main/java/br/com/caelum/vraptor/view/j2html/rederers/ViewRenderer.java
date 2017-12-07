@@ -4,7 +4,9 @@ import br.com.caelum.vraptor.view.j2html.exception.ViewJ2HtmlException;
 import j2html.tags.DomContent;
 
 /**
- * Interface de renderizacao das views internas de cada pagina
+ * [en_US] Render interface for the internal views of each page.
+ * 
+ * [pt_BR] Interface de renderização das views internas de cada página.
  * 
  * @author giovanny.brandalise
  *
@@ -12,10 +14,14 @@ import j2html.tags.DomContent;
 public interface ViewRenderer {
 
 	/**
-	 * Metodo de retorno do array de elementos html filhos de DomContent a serem
-	 * renderizados dentro dos containers
+	 * [en_US] Method that return a array of html elements of DomContent children to
+	 * be rendered inside containers.
 	 * 
-	 * @return array de elementos filhos de DomContent
+	 * [pt_BR] Método que retorna um array de elementos html filhos de DomContent a
+	 * serem renderizados dentro dos containers.
+	 * 
+	 * @return [en_US] array of DomContent child elements. [pt_BR] array de
+	 *         elementos filhos de DomContent.
 	 * @throws ViewJ2HtmlException
 	 */
 	DomContent[] getElements() throws ViewJ2HtmlException;

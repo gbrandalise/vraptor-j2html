@@ -9,8 +9,11 @@ import java.lang.annotation.Target;
 import br.com.caelum.vraptor.view.j2html.rederers.ViewRenderer;
 
 /**
- * Anotacao responsavel pela configuracao da classe renderizadora da view
- * referente ao metodo ou controller
+ * [en_US] Annotation responsible for setting the rendering class of the view
+ * referring to the method or controller.
+ * 
+ * [pt_BR] Anotação responsável pela configuração da classe renderizadora da
+ * view referente ao método ou controller.
  * 
  * @author giovanny.brandalise
  *

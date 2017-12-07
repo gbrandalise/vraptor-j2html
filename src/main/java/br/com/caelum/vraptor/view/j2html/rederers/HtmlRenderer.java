@@ -1,7 +1,9 @@
 package br.com.caelum.vraptor.view.j2html.rederers;
 
 /**
- * Interface de renderizacao do elemento html do html
+ * [en_US] Html html element rendering interface.
+ * 
+ * [pt_BR] Interface de renderização do elemento html do html.
  * 
  * @author giovanny.brandalise
  *

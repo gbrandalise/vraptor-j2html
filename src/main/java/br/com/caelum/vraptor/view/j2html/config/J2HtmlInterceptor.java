@@ -14,9 +14,13 @@ import br.com.caelum.vraptor.core.InterceptorStack;
 import br.com.caelum.vraptor.interceptor.Interceptor;
 
 /**
- * Classe responsavel por interceptar todas as chamadas aos metodos e verificar
- * se possui a anotacao @J2HtmlRenderer ou nao Caso o metodo possua a anotacao,
- * usa a view J2HtmlView para renderizacao
+ * [en_US] Class responsible for intercepting all method calls and checking
+ * whether you have the @J2HtmlRenderer annotation or not. If the method has the
+ * annotation, uses the J2HtmlView view to render.
+ * 
+ * [pt_BR] Classe responsável por interceptar todas as chamadas aos métodos e
+ * verificar se possui a anotação @J2HtmlRenderer ou não. Caso o método possua a
+ * anotação, usa a view J2HtmlView para renderização.
  * 
  * @author giovanny.brandalise
  *
@@ -43,13 +47,16 @@ public class J2HtmlInterceptor implements Interceptor {
 	}
 
 	/**
-	 * Metodo responsavel por interceptar as chamadas aos metodos dos controllers
-	 * que possuem a anotacao @J2HtmlRenderer e utilizar a classe view J2HtmlView
-	 * para escrita do html
+	 * [en_US] Method responsible for intercepting calls to controllers methods
+	 * which have annotation @J2HtmlRenderer and use the J2HtmlView class view for
+	 * html writing.
+	 * 
+	 * [pt_BR] Método responsável por interceptar as chamadas aos métodos dos
+	 * controllers que possuem a anotação @J2HtmlRenderer e utilizar a classe view
+	 * J2HtmlView para escrita do html.
 	 */
 	@Override
-	public void intercept(InterceptorStack stack, ControllerMethod method, Object controllerInstance)
-			throws InterceptionException {
+	public void intercept(InterceptorStack stack, ControllerMethod method, Object controllerInstance) {
 		log.debug("intercept accessed");
 		stack.next(method, controllerInstance);
 		try {
@@ -61,8 +68,11 @@ public class J2HtmlInterceptor implements Interceptor {
 	}
 
 	/**
-	 * Metodo responsavel por validar se a anotacao @J2HtmlRenderer esta presente no
-	 * metodo ou na classe controller
+	 * [en_US] Method responsible for validating if annotation @J2HtmlRenderer is
+	 * present in method or in controller class.
+	 * 
+	 * [pt_BR] Método responsável por validar se a anotação @J2HtmlRenderer está
+	 * presente no método ou na classe controller.
 	 */
 	@Override
 	public boolean accepts(ControllerMethod method) {

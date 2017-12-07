@@ -24,7 +24,10 @@ import br.com.caelum.vraptor.view.j2html.rederers.ViewRenderer;
 import br.com.caelum.vraptor.view.j2html.util.ViewAttributesWrapper;
 
 /**
- * Classe responsavel por renderizar a view utilizando a biblioteca J2Html
+ * [en_US] Class responsible for rendering the view using the J2Html library.
+ * 
+ * [pt_BR] Classe responsável por renderizar a view utilizando a biblioteca
+ * J2Html.
  * 
  * @author giovanny.brandalise
  *
@@ -57,16 +60,24 @@ public class J2HtmlView implements View {
 	}
 
 	/**
-	 * Metodo responsavel pela renderizacao do html a partir das interfaces
-	 * referentes a cada porcao de elementos html Ex.: <html>, <head>, <body> Todas
-	 * as classes de cada porcao de elementos sao injetadas usando CDI, portanto eh
-	 * possivel sobrescrever as classes default usando a anotacao @Specializes A
-	 * renderizacao utiliza o padrao Html5 para renderizacao, bem como possui uma
-	 * renderizacao padrao de erros que também pode ser sobrescrita usando a
-	 * anotacao @Specializes
+	 * [en_US] Method responsible for rendering html from the interfaces for each
+	 * portion of html elements eg: <html>, <head>, <body>. All the classes of each
+	 * portion of elements are injected using CDI, so it is you can override default
+	 * classes by using the @Specializes annotation. The rendering uses the Html5
+	 * pattern for rendering, as well as, has a standard error rendering that can
+	 * also be overwritten using annotation @Specializes.
+	 *
+	 * [pt_BR] Método responsável pela renderização do html a partir das interfaces
+	 * referentes a cada porção de elementos html Ex.: <html>, <head>, <body>. Todas
+	 * as classes de cada porção de elementos são injetadas usando CDI, portanto é
+	 * possível sobrescrever as classes default usando a anotação @Specializes. A
+	 * renderização utiliza o padrão Html5 para renderização, bem como, possui uma
+	 * renderização padrão de erros que também pode ser sobrescrita usando a
+	 * anotação @Specializes.
 	 * 
 	 * @param method
-	 *            metodo executado no controller
+	 *            [en_US] method executed in controller. [pt_br] método executado no
+	 *            controller.
 	 * @throws IOException
 	 */
 	public void writeJ2Html(ControllerMethod method) throws IOException {
@@ -90,13 +101,19 @@ public class J2HtmlView implements View {
 	}
 
 	/**
-	 * Metodo responsavel por recuperar a classe que implementa ViewRenderer
-	 * configurada na anotacao @J2HtmlRenderer, instancia-la, e retorna-la ao metodo
-	 * de escrita do html
+	 * [en_US] Method responsible for retrieving the class that implements
+	 * ViewRenderer set in annotation @J2HtmlRenderer, instantiate it and return it
+	 * to method html writing.
+	 * 
+	 * [pt_BR] Método responsável por recuperar a classe que implementa ViewRenderer
+	 * configurada na anotação @J2HtmlRenderer, instancia-la e retorna-la ao método
+	 * de escrita do html.
 	 * 
 	 * @param method
-	 *            metodo executado no controller
-	 * @return classe resposavel pela renderizacao do html da view
+	 *            [en_US] method executed in controller. [pt_BR] método executado no
+	 *            controller.
+	 * @return [en_US] class responsible for view html rendering. [pt_BR] classe
+	 *         resposável pela renderização do html da view.
 	 * @throws NoSuchMethodException
 	 * @throws InstantiationException
 	 * @throws IllegalAccessException

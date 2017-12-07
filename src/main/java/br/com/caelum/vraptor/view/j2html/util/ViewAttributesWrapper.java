@@ -4,8 +4,11 @@ import javax.enterprise.inject.Vetoed;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Classe util usada para recuperar os atributos escritos no request e na
- * session na classe de renderizacao da view
+ * [en_US] Util class used to retrieve the attributes written in the request and
+ * in the session in view render class.
+ * 
+ * [pt_BR] Classe útil usada para recuperar os atributos escritos no request e
+ * na session na classe de renderização da view.
  * 
  * @author giovanny.brandalise
  *
@@ -20,26 +23,38 @@ public class ViewAttributesWrapper {
 	}
 
 	/**
-	 * Metodo responsavel por retornar os atributos escritos no request
+	 * [en_US] Method responsible for returning the attributes written in the
+	 * request.
+	 * 
+	 * [pt_BR] Método responsável por retornar os atributos escritos no request.
 	 * 
 	 * @param attributeName
-	 *            chave do atributo escrito na request
+	 *            [en_US] attribute key written in the request. [pt_BR] chave do
+	 *            atributo escrito na request.
 	 * @param clazz
-	 *            classe de retorno responsavel por fazer o cast automatico
-	 * @return objeto do tipo da classe passada como parametro
+	 *            [en_US] class of return responsible for automatic casting. [pt_BR]
+	 *            classe de retorno responsável por fazer o cast automático.
+	 * @return [en_US] object of the type of the class passed as parameter. [pt_BR]
+	 *         objeto do tipo da classe passada como parâmetro.
 	 */
 	public <T> T getRequestAttribute(String attributeName, Class<T> clazz) {
 		return getAttribute(attributeName, clazz, false);
 	}
 
 	/**
-	 * Metodo responsavel por retornar os atributos escritos na session
+	 * [en_US] Method responsible for returning the attributes written in the
+	 * session.
+	 * 
+	 * [pt_BR] Método responsável por retornar os atributos escritos no session.
 	 * 
 	 * @param attributeName
-	 *            chave do atributo escrito na request
+	 *            [en_US] attribute key written in the session. [pt_BR] chave do
+	 *            atributo escrito na session.
 	 * @param clazz
-	 *            classe de retorno responsavel por fazer o cast automatico
-	 * @return objeto do tipo da classe passada como parametro
+	 *            [en_US] class of return responsible for automatic casting. [pt_BR]
+	 *            classe de retorno responsável por fazer o cast automático.
+	 * @return [en_US] object of the type of the class passed as parameter. [pt_BR]
+	 *         objeto do tipo da classe passada como parâmetro.
 	 */
 	public <T> T getSessionAttribute(String attributeName, Class<T> clazz) {
 		return getAttribute(attributeName, clazz, true);

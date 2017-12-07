@@ -17,8 +17,11 @@ import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
 /**
- * Classe default de implementacao da renderizacao da pagina de erro. Essa
- * classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * [en_US] The default implementation class of the rendering of the error page.
+ * That class can be overwritten using the CDI @Specializes annotation.
+ * 
+ * [pt_BR] Classe default de implementação da renderização da página de erro.
+ * Essa classe pode ser sobrescrita usando a anotação @Specializes do CDI.
  * 
  * @author giovanny.brandalise
  *
@@ -57,10 +60,12 @@ public class DefaultErrorRenderer implements ErrorRenderer {
 
 	private String viewExceptionToString(ViewJ2HtmlException ex) {
 		StringBuilder sb = new StringBuilder();
+		sb.append("<!-- Exception: \n");
 		for (StackTraceElement ste : ex.getCause().getStackTrace()) {
 			sb.append(ste.toString() + "\n");
 		}
-		return "<!-- Exception: \n" + sb.toString() + "\n-->";
+		sb.append("\n-->");
+		return sb.toString();
 	}
 
 }

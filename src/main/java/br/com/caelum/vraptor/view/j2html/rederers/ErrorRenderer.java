@@ -5,7 +5,9 @@ import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
 /**
- * Interface de renderizacao da pagina de erro
+ * [en_US] Error page rendering interface.
+ * 
+ * [pt_BR] Interface de renderização da página de erro.
  * 
  * @author giovanny.brandalise
  *
@@ -13,25 +15,31 @@ import j2html.tags.DomContent;
 public interface ErrorRenderer {
 
 	/**
-	 * Metodo que recebe uma lista de elementos filhos de DomContent para serem
-	 * renderizados dentro do container
+	 * [en_US] Method that receives the thrown exception and a list of child
+	 * elements from DomContent to be rendered inside the container.
+	 * 
+	 * [pt_BR] Método que recebe a exceção lançada e uma lista de elementos filhos
+	 * de DomContent para serem renderizados dentro do container.
 	 * 
 	 * @param ex
-	 *            excecao disparada
+	 *            [en_US] exception thrown. [pt_BR] exceção lançada.
 	 * @param content
-	 *            lista de elementos
-	 * @return elemento filho de ContainerTag
+	 *            [en_US] list of elements. [pt_BR] lista de elementos.
+	 * @return [en_US] child element of ContainerTag. [pt_BR] elemento filho de
+	 *         ContainerTag.
 	 */
 	ContainerTag getContainer(ViewJ2HtmlException ex, DomContent... content);
 
 	/**
-	 * Metodo que recebe uma String com o html a ser renderizado dentro do container
+	 * Method that receives the thrown exception and a String with the html to be
+	 * rendered inside the container.
 	 * 
 	 * @param ex
-	 *            excecao disparada
+	 *            [en_US] exception thrown. [pt_BR] exceção lançada.
 	 * @param content
-	 *            lista de elementos
-	 * @return elemento filho de ContainerTag
+	 *            [en_US] list of elements. [pt_BR] lista de elementos.
+	 * @return [en_US] child element of ContainerTag. [pt_BR] elemento filho de
+	 *         ContainerTag.
 	 */
 	ContainerTag getContainer(ViewJ2HtmlException ex, String content);
 

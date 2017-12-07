@@ -1,19 +1,19 @@
 ## vraptor-j2html
 
-A simple engine for rendering html using the J2Html library, which uses class and methods for generating elements and html attributes.
+Uma engine simples para renderização de html usando a biblioteca J2Html, a qual usa classe e métodos para geração de elementos e atributos html.
 
-The engine does not require the use of J2Html, since VRaptor conventions are still enabled.
-It is only required in methods or classes that have the @J2HtmlRenderer annotation, ie it is possible to use the same view rendering class for all methods of a controller, or specifically for a method.
+A engine não obriga a utilização do J2Html, visto que as convenções do VRaptor continuam habilitadas.
+Ela só é requisitada nos métodos ou classes que possuem a anotação @J2HtmlRenderer, ou seja, é possível usar a mesma classe de renderização da view para todos os métodos de um controller, ou, especificamente para um método.
 
-The library already has a default class for rendering the default container elements of an html document such as html, head, and body.
-It also has a standard error page rendering.
+A biblioteca já possui classe default de renderização dos elementos containers padrão de um documento html como html, head e body.
+Possui também uma renderização de página de erro padrão.
 
-All default classes can be overwritten using the Java CDI Api specification.
+Todos as classes default podem ser sobrescritas usando as especificações da Api de CDI do Java.
 
 
-# installing
+# instalando
 
-VRaptor-J2Html.jar can be added to a VRaptor project using maven:
+VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 
 ```
 		<dependency>
@@ -24,7 +24,7 @@ VRaptor-J2Html.jar can be added to a VRaptor project using maven:
 		</dependency>
 ```
 
-# view rendering
+# renderizacao das views
 
 ```
 		public class Client {
@@ -70,7 +70,7 @@ VRaptor-J2Html.jar can be added to a VRaptor project using maven:
 		}
 		
 		
-		<!-- final html -->
+		<!-- html final -->
 		<!DOCTYPE html>
 		<html>
 			<head>
@@ -81,7 +81,7 @@ VRaptor-J2Html.jar can be added to a VRaptor project using maven:
 		</html>
 ```
 
-# overwriting standard containers
+# sobrescrevendo os containers padrão
 
 ```
 		@Specializes
@@ -91,32 +91,32 @@ VRaptor-J2Html.jar can be added to a VRaptor project using maven:
 			@Override
 			public ContainerTag getContainer(DomContent... content) throws ViewJ2HtmlException {
 				List<DomContent> contents = Lists.newArrayList(content);
-				contents.add(0, h1("Title"));
+				contents.add(0, h1("Titulo"));
 				return body(contents.toArray(new DomContent[0]));
 			}
 		
 			@Override
 			public ContainerTag getContainer(String content) throws ViewJ2HtmlException {		
-				content = "<h1>Title</h1>" + content;
+				content = "<h1>Titulo</h1>" + content;
 				return body(content);
 			}
 		
 		}
 		
-		<!-- final html -->
+		<!-- html final -->
 		<!DOCTYPE html>
 		<html>
 			<head>
 			</head>
 			<body>
-				<h1>Title</h1>
+				<h1>Titulo</h1>
 				admin
 			</body>
 		</html>
 ```
 
-# help
+# ajuda
 
-J2Html site with many examples of use:
+Site do J2Html com muitos exemplos de utilização:
 
 https://j2html.com/

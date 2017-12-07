@@ -16,8 +16,11 @@ import j2html.tags.ContainerTag;
 import j2html.tags.DomContent;
 
 /**
- * Classe default de implementacao da renderizacao do elemento html do html.
- * Essa classe pode ser sobrescrita usando a anotacao @Specializes do CDI
+ * [en_US] Default implementation class of the html html element rendering. This
+ * class can be overwritten using the CDI @Specializes annotation.
+ * 
+ * [pt_BR] Classe default de implementação da renderização do elemento html do
+ * html. Essa classe pode ser sobrescrita usando a anotação @Specializes do CDI.
  * 
  * @author giovanny.brandalise
  *
