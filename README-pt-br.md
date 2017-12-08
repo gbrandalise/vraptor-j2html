@@ -13,13 +13,14 @@ Todos as classes default podem ser sobrescritas usando as especificações da Ap
 
 # instalando
 
+Como a engine ainda não está disponível no repositório central do maven, é necessário baixar o código fonte e gerar o .jar executando mvn clean package.
 VRaptor-J2Html.jar pode ser adicionado a um projeto VRaptor usando maven:
 
 ```
 		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>vraptor-j2html</artifactId>
-			<version>0.1.0</version>
+			<version>0.1.0</version> <!-- ou última versão disponível -->
 			<scope>compile</scope>
 		</dependency>
 ```

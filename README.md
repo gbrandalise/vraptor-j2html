@@ -13,13 +13,14 @@ All default classes can be overwritten using the Java CDI Api specification.
 
 # installing
 
+As the engine is not yet available in the maven central repository, you need to download the source code and generate .jar by running mvn clean package.
 VRaptor-J2Html.jar can be added to a VRaptor project using maven:
 
 ```
 		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>vraptor-j2html</artifactId>
-			<version>0.1.0</version>
+			<version>0.1.0</version> <!-- or lastest version available -->
 			<scope>compile</scope>
 		</dependency>
 ```
