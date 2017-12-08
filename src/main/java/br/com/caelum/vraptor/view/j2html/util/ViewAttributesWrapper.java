@@ -34,6 +34,8 @@ public class ViewAttributesWrapper {
 	 * @param clazz
 	 *            [en_US] class of return responsible for automatic casting. [pt_BR]
 	 *            classe de retorno responsável por fazer o cast automático.
+	 * @param <T>
+	 *            [en_US] return class. [pt_BR] classe de retorno.
 	 * @return [en_US] object of the type of the class passed as parameter. [pt_BR]
 	 *         objeto do tipo da classe passada como parâmetro.
 	 */
@@ -53,6 +55,8 @@ public class ViewAttributesWrapper {
 	 * @param clazz
 	 *            [en_US] class of return responsible for automatic casting. [pt_BR]
 	 *            classe de retorno responsável por fazer o cast automático.
+	 * @param <T>
+	 *            [en_US] return class. [pt_BR] classe de retorno.
 	 * @return [en_US] object of the type of the class passed as parameter. [pt_BR]
 	 *         objeto do tipo da classe passada como parâmetro.
 	 */

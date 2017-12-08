@@ -24,9 +24,13 @@ public interface ContainerRenderer {
 	 * serem renderizados dentro do container.
 	 * 
 	 * @param content
+	 *            [en_US] list of DomContent child elements. [pt_BR] lista de
+	 *            elementos filhos de DomContent.
 	 * @return [en_US] child element of ContainerTag. [pt_BR] elemento filho de
 	 *         ContainerTag.
 	 * @throws ViewJ2HtmlException
+	 *             [en_US] custom exception for errors using the engine. [pt_BR]
+	 *             exceção customizada para erros usando a engine.
 	 */
 	ContainerTag getContainer(DomContent... content) throws ViewJ2HtmlException;
 
@@ -38,9 +42,13 @@ public interface ContainerRenderer {
 	 * container.
 	 * 
 	 * @param content
+	 *            [en_US] list of DomContent child elements. [pt_BR] lista de
+	 *            elementos filhos de DomContent.
 	 * @return [en_US] child element of ContainerTag. [pt_BR] elemento filho de
 	 *         ContainerTag.
 	 * @throws ViewJ2HtmlException
+	 *             [en_US] custom exception for errors using the engine. [pt_BR]
+	 *             exceção customizada para erros usando a engine.
 	 */
 	ContainerTag getContainer(String content) throws ViewJ2HtmlException;
 

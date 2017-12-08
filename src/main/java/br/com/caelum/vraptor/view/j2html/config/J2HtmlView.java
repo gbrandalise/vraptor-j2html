@@ -60,15 +60,15 @@ public class J2HtmlView implements View {
 
 	/**
 	 * [en_US] Method responsible for rendering html from the interfaces for each
-	 * portion of html elements eg: <html>, <head>, <body>. All the classes of each
+	 * portion of html elements eg: html, head, body. All the classes of each
 	 * portion of elements are injected using CDI, so it is you can override default
 	 * classes by using the @Specializes annotation. The rendering uses the Html5
 	 * pattern for rendering, as well as, has a standard error rendering that can
 	 * also be overwritten using annotation @Specializes.
 	 *
 	 * [pt_BR] Método responsável pela renderização do html a partir das interfaces
-	 * referentes a cada porção de elementos html Ex.: <html>, <head>, <body>. Todas
-	 * as classes de cada porção de elementos são injetadas usando CDI, portanto é
+	 * referentes a cada porção de elementos html Ex.: html, head, body. Todas as
+	 * classes de cada porção de elementos são injetadas usando CDI, portanto é
 	 * possível sobrescrever as classes default usando a anotação @Specializes. A
 	 * renderização utiliza o padrão Html5 para renderização, bem como, possui uma
 	 * renderização padrão de erros que também pode ser sobrescrita usando a
@@ -78,6 +78,8 @@ public class J2HtmlView implements View {
 	 *            [en_US] method executed in controller. [pt_br] método executado no
 	 *            controller.
 	 * @throws IOException
+	 *             [en_US] exception if it can not write in response. [pt_BR]
+	 *             exceção caso não consiga excrever no response.
 	 */
 	public void writeJ2Html(ControllerMethod method) throws IOException {
 		log.debug("writeJ2Html accessed");
@@ -114,9 +116,16 @@ public class J2HtmlView implements View {
 	 * @return [en_US] class responsible for view html rendering. [pt_BR] classe
 	 *         resposável pela renderização do html da view.
 	 * @throws NoSuchMethodException
+	 *             [en_US] contructor not found. [pt_BR] construtor não encontrado.
 	 * @throws InstantiationException
+	 *             [en_US] error when instantiating the view class. [pt_BR] erro ao
+	 *             instanciar a classe de view.
 	 * @throws IllegalAccessException
+	 *             [en_US] constructor not accessible in the view class. [pt_BR]
+	 *             construtor não acessível na classe de view.
 	 * @throws InvocationTargetException
+	 *             [en_US] error invoking the constructor. [pt_BR] erro ao invocar o
+	 *             construtor.
 	 */
 	protected ViewRenderer rendererForMethod(ControllerMethod method)
 			throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
@@ -127,9 +136,13 @@ public class J2HtmlView implements View {
 		} else if (method.getController().getType().getClass().isAnnotationPresent(J2HtmlRenderer.class)) {
 			classRenderer = method.getController().getType().getClass().getAnnotation(J2HtmlRenderer.class).value();
 		}
-		if (classRenderer != null && classRenderer.getConstructor(ViewAttributesWrapper.class) != null) {
-			ViewAttributesWrapper attributes = new ViewAttributesWrapper(request);
-			return classRenderer.getConstructor(ViewAttributesWrapper.class).newInstance(attributes);
+		try {
+			if (classRenderer != null && classRenderer.getConstructor(ViewAttributesWrapper.class) != null) {
+				ViewAttributesWrapper attributes = new ViewAttributesWrapper(request);
+				return classRenderer.getConstructor(ViewAttributesWrapper.class).newInstance(attributes);
+			}
+		} catch (NoSuchMethodException e) {
+			log.debug("Constructor not foud");
 		}
 		return classRenderer != null ? classRenderer.getConstructor().newInstance() : null;
 	}

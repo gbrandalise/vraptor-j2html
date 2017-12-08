@@ -23,6 +23,8 @@ public interface ViewRenderer {
 	 * @return [en_US] array of DomContent child elements. [pt_BR] array de
 	 *         elementos filhos de DomContent.
 	 * @throws ViewJ2HtmlException
+	 *             [en_US] custom exception for errors using the engine. [pt_BR]
+	 *             exceção customizada para erros usando a engine.
 	 */
 	DomContent[] getElements() throws ViewJ2HtmlException;
 

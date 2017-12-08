@@ -1,11 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>br.com.caelum.vraptor</groupId>
 	<artifactId>vraptor-j2html</artifactId>
-	<version>0.1.3</version>
-	<name>vraptor-j2html</name>
+	<version>0.1.3</version>	
 	<packaging>jar</packaging>
+	
+	<name>vraptor-j2html</name>
+	<description>A simple engine for rendering html using the J2Html library, which uses class and methods for generating elements and html attributes.</description>
+  	<url>https://github.com/gbrandalise/vraptor-j2html</url>
 
 	<properties>
 		<!-- Encoding sources -->
@@ -16,6 +20,9 @@
 
 		<!-- Maven plugins -->
 		<maven.compiler.version>3.7.0</maven.compiler.version>
+		<maven.source.version>3.0.1</maven.source.version>
+		<maven.javadoc.version>2.10.4</maven.javadoc.version>
+		<maven.gpg.version>1.6</maven.gpg.version>
 
 		<!-- Dependencies -->
 		<servlet.version>3.1.0</servlet.version>
@@ -32,6 +39,39 @@
 		<weld.se.version>3.0.2.Final</weld.se.version>
 		<mockito.version>1.8.5</mockito.version>
 	</properties>
+	
+	<licenses>
+    	<license>
+      		<name>The Apache Software License, Version 2.0</name>
+      		<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    	</license>
+  	</licenses>
+  	
+	<developers>
+    	<developer>
+      		<name>Giovanny Brandalise</name>
+      		<email>giovanny.brandalise@gmail.com</email>
+      		<organization>Neo Systems</organization>
+      		<organizationUrl>https://github.com/gbrandalise</organizationUrl>
+    	</developer>
+  	</developers>
+  	
+	<scm>
+    	<connection>scm:git:git@github.com:gbrandalise/vraptor-j2html.git</connection>
+    	<developerConnection>scm:git:git@github.com:gbrandalise/vraptor-j2html.git</developerConnection>
+    	<url>https://github.com/gbrandalise/vraptor-j2html/tree/master</url>
+	</scm>
+	
+	<distributionManagement>
+		<snapshotRepository>
+   			<id>ossrh</id>
+   			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  		</snapshotRepository>
+  		<repository>
+   			<id>ossrh</id>
+   			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -126,6 +166,54 @@
 					<encoding>${project.build.encoding}</encoding>
 					<outputEncoding>${project.build.encoding}</outputEncoding>
 				</configuration>
+			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-source-plugin</artifactId>
+		        <version>${maven.source.version}</version>
+				<configuration>
+					<encoding>${project.build.encoding}</encoding>
+					<outputEncoding>${project.build.encoding}</outputEncoding>
+				</configuration>
+		        <executions>
+     				<execution>
+      					<id>attach-sources</id>
+      					<goals>
+       						<goal>jar-no-fork</goal>
+      					</goals>
+     				</execution>
+				</executions>
+			</plugin>
+			<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-javadoc-plugin</artifactId>
+    			<version>${maven.javadoc.version}</version>
+				<configuration>
+					<encoding>${project.build.encoding}</encoding>
+					<outputEncoding>${project.build.encoding}</outputEncoding>
+				</configuration>
+    			<executions>
+     				<execution>
+      					<id>attach-javadocs</id>
+      					<goals>
+       						<goal>jar</goal>
+      					</goals>
+     				</execution>
+    			</executions>
+			</plugin>
+			<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-gpg-plugin</artifactId>
+    			<version>${maven.gpg.version}</version>
+    			<executions>
+     				<execution>
+      					<id>sign-artifacts</id>
+      					<phase>verify</phase>
+      					<goals>
+       						<goal>sign</goal>
+      					</goals>
+     				</execution>
+    			</executions>
 			</plugin>
 		</plugins>
 	</build>
